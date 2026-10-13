@@ -1,0 +1,132 @@
+Now build the complete web app based on the structure you gave me.
+
+═══════════════════════════════════════════
+PROJECT: EduLK - Free School Learning Platform
+═══════════════════════════════════════════
+
+TECH STACK:
+- Next.js 14 (App Router) + TypeScript
+- TailwindCSS + shadcn/ui
+- Supabase (Database + Auth + Storage)
+- next-intl (Sinhala/Tamil/English)
+- next-themes (Light/Dark/System)
+- TipTap editor (rich text with HTML)
+- Recharts (analytics)
+- Stripe + PayHere (subscriptions)
+- Google AdMob / AdSense (ads)
+- Resend (email)
+- Vercel (hosting)
+
+═══════════════════════════════════════════
+CORE FEATURES:
+═══════════════════════════════════════════
+
+1. PUBLIC SITE
+   - Home page (grades grid, featured videos)
+   - Grade pages (1-13)
+   - Subject pages (per grade)
+   - Lesson pages (YouTube embed + notes + quiz)
+   - Multi-language toggle
+   - Theme toggle (Light/Dark/System)
+   - Search
+   - Contact Us page
+   - FAQ page
+   - Privacy Policy / Terms
+   - About page
+
+2. STUDENT FEATURES
+   - Signup/Login (email + Google)
+   - Dashboard (progress, bookmarks, history)
+   - Watch history (resume video)
+   - Bookmarks/Favorites
+   - Notes taking
+   - Quiz attempts + results
+   - Certificate generation
+   - Subscription upgrade
+
+3. SUBSCRIPTION SYSTEM
+   - Free tier (ads, limited videos)
+   - Premium tier (no ads, all videos, downloads)
+   - Tiers configurable from admin
+   - Payment gateway: PayHere (SL) + Stripe (international)
+   - Auto-recurring billing
+   - Invoice generation
+   - Cancel/Upgrade/Downgrade
+
+4. ADMIN PANEL (/admin)
+   - Dashboard with analytics
+   - Grade Management (CRUD)
+   - Subject Management (CRUD)
+   - Lesson Management (CRUD)
+   - Video Manager:
+     * Paste YouTube URL → auto extract ID
+     * Auto-fetch title + thumbnail
+     * Permission tracking
+     * Bulk import
+   - User Management (view, ban, roles)
+   - Subscription Manager:
+     * View all subscriptions
+     * Manually upgrade/downgrade user
+     * Coupon codes
+     * Refunds
+     * Revenue analytics
+   - AdMob Manager:
+     * Add/edit ad codes
+     * Placement control (header/sidebar/between content)
+     * Enable/disable per page
+     * Ad frequency settings
+     * Revenue tracking
+   - Contact Messages inbox
+   - Announcements/Notifications
+   - Theme Customizer (colors, fonts, logo)
+   - Settings (site name, SEO, etc.)
+   - Activity Logs
+
+5. YOUTUBE AUTO-EMBED (Key feature)
+   - Admin pastes any YouTube URL format
+   - Auto extract video ID (all formats)
+   - Live preview before save
+   - Auto-fetch title via noembed
+   - Store: videoId, title, thumbnail, channel, permission
+   - Student side: lazy-load player
+
+6. ADMOB INTEGRATION
+   - Admin can add/edit ad unit codes
+   - Placements: header, sidebar, in-feed, below video, footer
+   - Show/hide ads based on subscription tier
+   - Non-intrusive (kid-safe)
+   - AdSense for web + AdMob for future app
+   - Frequency capping
+   - A/B testing
+
+═══════════════════════════════════════════
+DESIGN REQUIREMENTS:
+═══════════════════════════════════════════
+- Kid-friendly (big buttons, emojis, colors)
+- Mobile-first (100% responsive)
+- Accessibility (WCAG AA)
+- Fast (< 2s load)
+- PWA (installable)
+- Offline mode for notes
+- Sinhala/Tamil font support (Noto Sans)
+- Dark mode friendly
+
+═══════════════════════════════════════════
+OUTPUT FORMAT:
+═══════════════════════════════════════════
+Give me code in this order (one file at a time, complete):
+
+PHASE 1 (Start here):
+- package.json
+- tailwind.config.ts
+- next.config.js
+- .env.example
+- app/layout.tsx
+- app/page.tsx
+- Theme provider
+- i18n setup
+
+Then continue with each file. Mark files clearly.
+
+Start with PHASE 1 now. Give complete, working code with 
+comments. Don't skip imports.

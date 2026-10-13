@@ -1,0 +1,116 @@
+Build ONLY the admin panel for my educational platform.
+
+Route: /admin/*
+
+Layout:
+- Sidebar (collapsible, mobile drawer)
+- Top bar (user menu, notifications, theme toggle)
+- Main content area
+- Breadcrumbs
+
+Pages needed:
+
+1. /admin/dashboard
+   - Stat cards: Total Students, Active Subs, Revenue, 
+     Videos, Lessons, Revenue this month
+   - Charts: User growth, Revenue trend, Popular grades
+   - Recent activities table
+
+2. /admin/grades
+   - Table with: Grade #, Name, Subjects count, Status, Actions
+   - Add/Edit modal (name in 3 languages, thumbnail, order)
+   - Drag & drop reorder
+   - Active/Inactive toggle
+   - Delete with confirmation
+
+3. /admin/subjects
+   - Filter by grade
+   - CRUD operations
+   - Icon picker, color picker
+   - Order drag & drop
+
+4. /admin/lessons
+   - Filter by grade + subject
+   - Rich text editor (TipTap) with:
+     * Bold, Italic, Underline
+     * H1-H6, Lists, Tables
+     * Font family, size, color
+     * Image upload
+     * HTML source view
+     * Sinhala/Tamil font support
+   - YouTube URL input → auto embed
+   - Multi-language tabs
+   - Draft/Published toggle
+   - Schedule publish
+
+5. /admin/videos
+   - Grid view of all videos
+   - Bulk import (paste multiple URLs)
+   - Permission status column
+   - Broken link checker
+   - Duplicate detector
+
+6. /admin/users
+   - Table with search/filter
+   - User detail page
+   - Role management
+   - Ban/Unban
+   - Subscription status
+
+7. /admin/subscriptions
+   - Plans CRUD (name, price, duration, features)
+   - View all active subscriptions
+   - Manual upgrade/downgrade
+   - Coupon codes (create, limit, expiry)
+   - Revenue dashboard
+   - Refund management
+   - Payment gateway settings
+
+8. /admin/ads  (AdMob Manager)
+   - Ad unit list (name, code, placement, status)
+   - Add new ad:
+     * Name
+     * Provider (AdSense/AdMob/Custom HTML)
+     * Code (textarea)
+     * Placement: header/sidebar/in-content/below-video/footer
+     * Show for: Free only / Everyone / Premium only
+     * Frequency: always/every N views
+     * Target pages
+   - Preview
+   - Enable/Disable
+   - Performance (impressions, clicks, revenue)
+
+9. /admin/contact
+   - Inbox style
+   - Filter by reason (general/permission/technical)
+   - Reply from panel (sends email)
+   - Mark as read/resolved
+   - Export CSV
+
+10. /admin/theme
+    - Color pickers (primary, secondary, accent)
+    - Font selector (Sinhala/Tamil/English)
+    - Logo + favicon upload
+    - Live preview
+    - Reset to default
+
+11. /admin/settings
+    - Site name, tagline, description
+    - SEO defaults
+    - Social links
+    - Email settings
+    - API keys
+
+12. /admin/logs
+    - Every admin action logged
+    - Filter by user, date, action type
+
+Use:
+- shadcn/ui components
+- React Hook Form + Zod validation
+- TanStack Table for tables
+- Recharts for charts
+- Server Actions or API routes
+
+Give complete code file by file. Start with layout 
+and sidebar.

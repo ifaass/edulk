@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Noto Sans", "Noto Sans Sinhala", "Noto Sans Tamil", ui-sans-serif, sans-serif;
+  --font-display: "Fraunces", "Noto Sans Sinhala", "Noto Sans Tamil", ui-serif, serif;
+  --color-bg: #f4f0e6;
+  --color-surface: #fffdf8;
+  --color-fg: #1a2332;
+  --color-muted: #5c6b7a;
+  --color-border: #e2d9c8;
+  --color-primary: #0f6b5c;
+  --color-primary-fg: #f3fbf8;
+  --color-accent: #c45c26;
+  --color-accent-fg: #fff8f3;
+  --color-soft: #e7f4f0;
+  --color-accent-soft: #f8ebe3;
+  --color-ink: #1a2332;
+  --radius-lg: 1rem;
+}
+
+.dark {
+  --color-bg: #121816;
+  --color-surface: #1c2421;
+  --color-fg: #e8ede9;
+  --color-muted: #9aaba3;
+  --color-border: #2e3b36;
+  --color-primary: #3dbea0;
+  --color-primary-fg: #06241c;
+  --color-accent: #e08a4f;
+  --color-accent-fg: #2a1408;
+  --color-soft: #17302c;
+  --color-accent-soft: #2c2118;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary { cursor: pointer; }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
