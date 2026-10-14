@@ -2,7 +2,7 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { Page } from "@/components/shell";
 import { Button, fieldClass, labelClass } from "@/components/ui";
-import { authClient, GROK_PROVIDERS, signIn } from "@/lib/auth/client";
+import { authClient } from "@/lib/auth/client";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/_app/login")({
@@ -58,13 +58,6 @@ function LoginPage() {
           {error ? <p className="text-sm text-accent">{error}</p> : null}
           <Button type="submit" disabled={pending}>{pending ? "…" : mode === "up" ? "Create account" : t("signIn")}</Button>
         </form>
-        <div className="flex flex-col gap-2">
-          {GROK_PROVIDERS.map((provider) => (
-            <Button key={provider.providerId} type="button" variant="ghost" onClick={() => void signIn(provider.providerId, { callbackURL: "/account" })}>
-              Continue with {provider.label}
-            </Button>
-          ))}
-        </div>
       </div>
     </Page>
   );
