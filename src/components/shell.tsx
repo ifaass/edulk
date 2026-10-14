@@ -9,6 +9,7 @@ import type { AdPublic, Lang, Tier } from "@/lib/types";
 import { listPublicAds } from "@/server/catalog";
 import { getMyProfile } from "@/server/account";
 import { createContext, useContext } from "react";
+import { PWAInstallButton } from "@/components/PWAInstallButton";
 
 type Desk = {
   tier: Tier;
@@ -188,6 +189,7 @@ function SiteHeader() {
           <button type="button" onClick={cycle} className="grid size-11 place-items-center rounded-full border border-border bg-surface" aria-label={`${t("theme")}: ${theme}`}>
             <ThemeIcon className="size-4" />
           </button>
+          <PWAInstallButton />
           <div className="min-w-11">
             {isPending ? <div className="h-11 w-11 animate-pulse rounded-full bg-soft" /> : null}
             <SignedOut>
