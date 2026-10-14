@@ -83,10 +83,16 @@ export async function getSessionUser(
  */
 export async function requireUserId(bearerToken?: string): Promise<string> {
   if (!authConfigured && !gateIdentityEnabled()) {
-    if (databaseConfigured) {
+    // EdULK staging override: allow the shared dev user even when a real
+    // database is configured. Remove EDULK_ALLOW_DEV_USER from Vercel env
+    // (or set to "false") before public launch.
+    const allowDevUser =
+      process.env.EDULK_ALLOW_DEV_USER?.trim() === "true";
+    if (databaseConfigured && !allowDevUser) {
       throw new Error(
         "Auth is disabled (VITE_AUTH_ENABLED=false) but DATABASE_URL is set — " +
-          "refusing to fall back to the shared dev user against a real database.",
+          "refusing to fall back to the shared dev user against a real database. " +
+          "Set EDULK_ALLOW_DEV_USER=true to override for staging.",
       );
     }
     return DEV_USER_ID;
